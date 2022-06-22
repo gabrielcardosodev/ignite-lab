@@ -1,5 +1,14 @@
-import React from 'react'
+import { ApolloProvider } from '@apollo/client'
+
+import { client } from './lib/apollo'
+import { Event } from './pages/Event'
 
 export function App() {
-  return <div></div>
+  return (
+    <div>
+      <ApolloProvider client={client}>
+        <Event />
+      </ApolloProvider>
+    </div>
+  )
 }
