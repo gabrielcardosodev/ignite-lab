@@ -9,5 +9,5 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "conventionalCommits.scopes": ["components"]
+  "conventionalCommits.scopes": ["components", "lib"]
 }
