@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/event", "dest": "/" },
+    { "src": "/event/lesson/:slug", "dest": "/" }
+  ]
+}
