@@ -6,7 +6,7 @@ import { Logo } from '../components/Logo'
 export function Home() {
   const navigation = useNavigate()
   function handleSubmitForm() {
-    navigation('/event')
+    navigation('event/lesson/abertura')
   }
 
   return (
