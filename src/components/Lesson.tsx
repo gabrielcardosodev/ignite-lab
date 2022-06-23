@@ -23,7 +23,7 @@ export function Lesson({ title, slug, availableAt, type }: LessonProps) {
     <a href={slug}>
       <span className="text-gray-300">{availableDateFormatted}</span>
 
-      <div className="mt-2 rounded border border-gray-600 p-4">
+      <div className="mt-2 rounded border border-gray-600 p-4 transition-all hover:border-blue-500">
         <header className="flex justify-between">
           {isAvailable ? (
             <span className="flex items-center gap-2 text-sm font-medium text-blue-300">
