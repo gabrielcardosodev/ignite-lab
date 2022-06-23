@@ -13,6 +13,7 @@ import { Footer } from './Footer'
 
 import '@vime/core/themes/default.css'
 import { Button } from './Button'
+import { Assets } from './Assets'
 
 const GET_LESSON_BY_SLUG_QUERY = gql`
   query GetLessonResponse($slug: String) {
@@ -117,51 +118,19 @@ export function Video({ lessonSlug }: VideoProps) {
           </div>
 
           <div className="mt-20 flex gap-8">
-            <a
-              className="flex items-stretch gap-6 overflow-hidden rounded bg-gray-700 transition-colors hover:opacity-90"
-              href="#"
-            >
-              <div className="flex h-full items-center bg-blue-500 p-6">
-                <FileArrowDown size={39} />
-              </div>
+            <Assets
+              title="Material complementar"
+              description="Acesse o material complementar para acelerar o seu desenvolvimento"
+              iconLeft={<FileArrowDown size={39} />}
+              iconRight={<CaretRight size={24} />}
+            />
 
-              <div className="flex flex-col items-start justify-center gap-2 py-6 leading-relaxed">
-                <strong className="text-2xl text-gray-100">
-                  Material complementar
-                </strong>
-                <span className="text-sm text-gray-200">
-                  Acesse o material complementar para acelerar o seu
-                  desenvolvimento
-                </span>
-              </div>
-
-              <div className="flex items-center p-6">
-                <CaretRight className="text-blue-300" size={24} />
-              </div>
-            </a>
-
-            <a
-              className="flex items-stretch gap-6 overflow-hidden rounded bg-gray-700 transition-colors hover:opacity-90"
-              href="#"
-            >
-              <div className="flex h-full items-center bg-blue-500 p-6">
-                <Image size={39} />
-              </div>
-
-              <div className="flex flex-col items-start justify-center gap-2 py-6 leading-relaxed">
-                <strong className="text-2xl text-gray-100">
-                  Wallpapers exclusivos
-                </strong>
-                <span className="text-sm text-gray-200">
-                  Baixe wallpapers exclusivos do Ignite Lab e personalize a sua
-                  máquina
-                </span>
-              </div>
-
-              <div className="flex items-center p-6">
-                <CaretRight className="text-blue-300" size={24} />
-              </div>
-            </a>
+            <Assets
+              title="Wallpapers exclusivos"
+              description="Baixe wallpapers exclusivos do Ignite Lab e personalize a sua máquina"
+              iconLeft={<Image size={39} />}
+              iconRight={<CaretRight size={24} />}
+            />
           </div>
         </div>
 
