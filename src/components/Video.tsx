@@ -12,6 +12,7 @@ import {
 import { Footer } from './Footer'
 
 import '@vime/core/themes/default.css'
+import { Button } from './Button'
 
 const GET_LESSON_BY_SLUG_QUERY = gql`
   query GetLessonResponse($slug: String) {
@@ -101,20 +102,17 @@ export function Video({ lessonSlug }: VideoProps) {
             </div>
 
             <div className="flex flex-col gap-4">
-              <a
-                className="flex items-center justify-center gap-2 rounded bg-blue-500 py-[17px] px-[14px] text-sm font-bold uppercase text-white transition-colors hover:opacity-90"
-                href="#"
-              >
-                <DiscordLogo size={24} />
-                Comunidade no Discord
-              </a>
-              <a
-                className="flex items-center justify-center gap-2 rounded border border-blue-300 py-[17px] px-[14px] text-sm font-bold uppercase text-blue-300 transition-colors hover:bg-blue-300 hover:text-gray-900"
-                href="#"
-              >
-                <Lightning size={24} />
-                Acesse o desafio
-              </a>
+              <Button
+                title="Comunidade no Discord"
+                icon={<DiscordLogo size={24} />}
+                variant={'primary'}
+              />
+
+              <Button
+                title="Acesse o Desafio"
+                icon={<Lightning size={24} />}
+                variant={'secondary'}
+              />
             </div>
           </div>
 
