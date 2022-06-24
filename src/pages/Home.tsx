@@ -1,12 +1,60 @@
+import { gql, useMutation } from '@apollo/client'
+import { FormEvent, useEffect, useState } from 'react'
+import { toast, Toaster } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 
 import { Footer } from '../components/Footer'
 import { Logo } from '../components/Logo'
 
+const CREATE_SUBSCRIBER_MUTATION = gql`
+  mutation CreateSubscriber($name: String!, $email: String!) {
+    createSubscriber(data: { name: $name, email: $email }) {
+      id
+    }
+  }
+`
+
 export function Home() {
-  const navigation = useNavigate()
-  function handleSubmitForm() {
-    navigation('event/lesson/abertura')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+
+  const [createSubscriber, { loading, error, data }] = useMutation(
+    CREATE_SUBSCRIBER_MUTATION
+  )
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (error) {
+      toast.error('Ocorreu um erro ao processar sua inscrição!')
+    }
+    if (loading) {
+      toast('Processando sua inscrição...')
+    }
+    if (data) {
+      toast.success(
+        'Inscrição realizada! você será redirecionado para a página do evento em 3 segundos.'
+      )
+
+      setTimeout(() => {
+        navigate('/event/lesson/abertura')
+      }, 3000)
+    }
+  }, [data, loading, error])
+
+  function handleSubmitForm(e: FormEvent) {
+    e.preventDefault()
+
+    if (name.trim() !== '' && email.trim() !== '') {
+      createSubscriber({
+        variables: {
+          name,
+          email
+        }
+      })
+    } else {
+      toast.error('Por favor, preencha todos os campos.')
+    }
   }
 
   return (
@@ -42,23 +90,27 @@ export function Home() {
               onSubmit={handleSubmitForm}
             >
               <input
-                className="h-14 rounded border border-transparent bg-gray-900 px-5 text-gray-100 placeholder:text-gray-300 focus:border-blue-500 focus:outline-none"
-                placeholder="Seu nome completo"
                 type="text"
+                placeholder="Seu nome completo"
+                className="h-14 rounded border border-transparent bg-gray-900 px-5 text-gray-100 placeholder:text-gray-300 focus:border-blue-500 focus:outline-none"
+                onChange={e => setName(e.target.value)}
               />
 
               <input
                 type="email"
                 placeholder="Digite seu email"
                 className="h-14 rounded border border-transparent bg-gray-900 px-5 text-gray-100 placeholder:text-gray-300 focus:border-blue-500 focus:outline-none"
+                onChange={e => setEmail(e.target.value)}
               />
 
               <button
-                className="mt-4 h-14 rounded bg-blue-500 py-4 text-sm font-bold uppercase text-white transition-colors hover:opacity-90"
+                disabled={loading}
+                className="mt-4 h-14 rounded bg-blue-500 py-4 text-sm font-bold uppercase text-white transition-colors hover:opacity-90 disabled:opacity-50"
                 type="submit"
               >
                 Garantir minha vaga
               </button>
+              <Toaster position="top-right" reverseOrder={false} />
             </form>
           </div>
         </div>
