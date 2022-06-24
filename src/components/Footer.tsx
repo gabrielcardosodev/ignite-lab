@@ -2,17 +2,16 @@ import { RocketseatLogo } from './RocketseatLogo'
 
 export function Footer() {
   return (
-    <footer className="mx-6 mt-20 mb-5 flex h-14 items-center justify-between border-t border-gray-200 pt-6 2xl:mt-52">
-      <div className="flex items-center gap-6">
+    <footer className="flex items-center justify-between border-t border-gray-700 bg-transparent px-8 py-4">
+      <div className="flex items-center">
         <RocketseatLogo />
-        <span>Rocketseat - Todos os direitos reservados</span>
+        <span className="ml-6 text-gray-300">
+          Rocketseat - Todos os direitos reservados
+        </span>
       </div>
-
-      <div>
-        <a href="#" className="hover:underline">
-          Políticas de privacidade
-        </a>
-      </div>
+      <a href="#" className="text-gray-300 hover:underline">
+        Políticas de privacidade
+      </a>
     </footer>
   )
 }
