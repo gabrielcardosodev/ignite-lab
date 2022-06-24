@@ -23,8 +23,8 @@ export function Lesson({ title, slug, availableAt, type }: LessonProps) {
 
   return (
     <Link
-      to={`/event/lesson/${slug}`}
-      className={`${!isAvailable ? 'pointer-events-none' : 'group'}`}
+      to={isAvailable ? `/event/lesson/${slug}` : ''}
+      className={`${!isAvailable && 'cursor-not-allowed'} group`}
     >
       <span className="text-gray-300">{availableDateFormatted}</span>
 
@@ -32,8 +32,12 @@ export function Lesson({ title, slug, availableAt, type }: LessonProps) {
         className={`${
           slugRef &&
           slugRef === slug &&
-          'bg-blue-500 before:absolute before:left-[-7px] before:top-1/3 before:h-[14px] before:w-[14px] before:rotate-45 before:bg-blue-500 before:content-[""]'
-        } relative  mt-2 rounded border border-gray-600 p-4 transition-all group-hover:border-blue-500`}
+          'border-transparent bg-blue-500 before:bg-blue-500 '
+        } relative mt-2 border border-gray-600 p-4 transition-[border] before:absolute before:left-[-7px] before:top-1/2 before:z-10 before:-mt-2 before:h-[14px] before:w-[14px] before:rotate-45 before:rounded-[2px] before:content-[""] ${
+          !isAvailable
+            ? 'group-hover:border-gray-600'
+            : 'group-hover:border-blue-500'
+        }`}
       >
         <header className="flex justify-between">
           {isAvailable ? (
