@@ -51,11 +51,11 @@ export function Home() {
   return (
     <>
       <main className="mx-auto flex min-h-screen flex-col items-center">
-        <div className="mx-auto mt-32 flex w-full max-w-[1100px] items-center justify-between">
-          <div className="w-full max-w-[640px]">
+        <div className="mx-auto mt-10 flex w-full max-w-[1100px] flex-col items-center justify-between gap-8 lg:mt-32 lg:flex-row lg:gap-0">
+          <div className="flex w-full max-w-[312px] flex-col items-center justify-center md:max-w-[512px] lg:max-w-[640px] lg:items-start">
             <Logo />
 
-            <h1 className="mt-8 text-[2.5rem] text-gray-100">
+            <h1 className="mt-8 text-center text-[1.875rem] text-gray-100 lg:text-left lg:text-[2.5rem]">
               Construa uma{' '}
               <span className="font-medium text-blue-300">
                 aplicação completa,
@@ -64,14 +64,14 @@ export function Home() {
               <span className="font-medium text-blue-300">React JS</span>
             </h1>
 
-            <p className="mt-6 text-gray-200">
+            <p className="mt-6 text-center text-gray-200 lg:text-left">
               Em apenas uma semana você vai dominar na prática uma das
               tecnologias mais utilizadas e com alta demanda para acessar as
               melhores oportunidades do mercado.
             </p>
           </div>
 
-          <div className="rounded border border-gray-600 bg-gray-700 p-8">
+          <div className="rounded border border-gray-600 bg-gray-700 p-8 lg:p-8">
             <span className="mb-6 block text-2xl font-bold text-gray-100">
               Inscrever-se gratuitamente
             </span>

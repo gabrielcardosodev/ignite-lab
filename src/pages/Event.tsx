@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { Header } from '../components/Header'
@@ -6,13 +7,24 @@ import { Video } from '../components/Video'
 
 export function Event() {
   const { slug } = useParams<{ slug: string }>()
+  const [isOpen, setIsOpen] = useState(false)
+
+  function toggleSidebar() {
+    setIsOpen(!isOpen)
+  }
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsOpen(false)
+    }
+  }, [slug])
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <Header />
-      <main className="flex flex-1">
+    <div className="flex h-full max-h-screen min-h-screen flex-col overflow-hidden">
+      <Header toggleSidebar={toggleSidebar} isOpen={isOpen} />
+      <main className="flex flex-1 overflow-y-scroll lg:h-full">
         {slug ? <Video lessonSlug={slug} /> : <div className="flex-1" />}
-        <Sidebar />
+        <Sidebar isOpen={isOpen} />
       </main>
     </div>
   )
