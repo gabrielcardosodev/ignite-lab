@@ -26,8 +26,24 @@ module.exports = {
 
       fontFamily: {
         brand: 'Roboto, sans-serif'
-      }
+      },
+
+      animation: {
+        slide: '0.3s ease-in-out 0s 1 normal none running slide'
+      },
+
+      keyframes: {
+        slide: {
+          '0%, 100%': {
+            transform: 'translateX(100%)'
+          },
+
+          '100%': {
+            transform: 'translateX(0)'
+          }
+        }
+      },
+      plugins: []
     }
-  },
-  plugins: []
+  }
 }
