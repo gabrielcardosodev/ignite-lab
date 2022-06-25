@@ -39,7 +39,7 @@ export function Video({ lessonSlug }: VideoProps) {
 
   return (
     <>
-      <div className="z-0 max-h-full flex-1 flex-col overflow-y-scroll">
+      <div className="z-0 max-h-full flex-1 flex-col overflow-y-scroll scrollbar-none lg:scrollbar-thin lg:scrollbar-thumb-gray-600 lg:scrollbar-track-blue-500">
         <div className="flex justify-center bg-black">
           <div className="aspect-video h-full max-h-[60vh] w-full max-w-[1100px]">
             <Player>

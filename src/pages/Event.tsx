@@ -22,7 +22,7 @@ export function Event() {
   return (
     <div className="flex h-full max-h-screen min-h-screen flex-col overflow-hidden">
       <Header toggleSidebar={toggleSidebar} isOpen={isOpen} />
-      <main className="flex flex-1 overflow-y-scroll lg:h-full">
+      <main className="flex flex-1 overflow-y-scroll scrollbar-none">
         {slug ? <Video lessonSlug={slug} /> : <div className="flex-1" />}
         <Sidebar isOpen={isOpen} />
       </main>
