@@ -33,7 +33,7 @@ export function Lesson({ title, slug, availableAt, type }: LessonProps) {
           slugRef &&
           slugRef === slug &&
           'border-transparent bg-blue-500 before:bg-blue-500 '
-        } relative mt-2 border border-gray-600 p-4 transition-[border] before:absolute before:left-[-7px] before:top-1/2 before:z-10 before:-mt-2 before:h-[14px] before:w-[14px] before:rotate-45 before:rounded-[2px] before:content-[""] ${
+        } relative mt-2 rounded border border-gray-600 p-4 transition-[border] before:absolute before:left-[-7px] before:top-1/2 before:z-10 before:-mt-2 before:h-[14px] before:w-[14px] before:rotate-45 before:rounded-[2px] before:content-[""] ${
           !isAvailable
             ? 'group-hover:border-gray-600'
             : 'group-hover:border-blue-500'
