@@ -2,6 +2,10 @@ module.exports = {
   content: ['index.html', './src/**/*.{js,jsx,ts,tsx,vue,html}'],
   theme: {
     extend: {
+      backgroundImage: {
+        blur: 'url(./src/assets/blur.png)'
+      },
+
       colors: {
         blue: {
           300: '#81D8F7',
@@ -42,9 +46,8 @@ module.exports = {
             transform: 'translateX(0)'
           }
         }
-      },
+      }
     }
   },
-    plugins: [require('tailwind-scrollbar')]
-
+  plugins: [require('tailwind-scrollbar')]
 }
