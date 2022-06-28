@@ -10,14 +10,14 @@
 
 ### Desktop:
 <p align="center">
-<img width="500" src="https://i.imgur.com/9u6chH2.png" /> 
-<img width="500" src="https://i.imgur.com/88PoVGb.png" /> 
+<img width="49%" src="https://i.imgur.com/9u6chH2.png" /> 
+<img width="49%" src="https://i.imgur.com/88PoVGb.png" /> 
 </p>
 
 ### Mobile:
 <p align="center">
-<img width="500" src="https://i.imgur.com/X827lP4.png" /> 
-<img width="500" src="https://i.imgur.com/xMnKAcl.png" /> 
+<img width="49%" src="https://i.imgur.com/X827lP4.png" /> 
+<img width="49%" src="https://i.imgur.com/xMnKAcl.png" /> 
 </p>
 
 ---
